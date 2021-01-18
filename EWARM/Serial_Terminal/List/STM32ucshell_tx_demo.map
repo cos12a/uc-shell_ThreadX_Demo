@@ -1,0 +1,949 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  18/Jan/2021  15:58:14
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM\Serial_Terminal\Exe\STM32ucshell_tx_demo.out
+#    Map file     =
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM\Serial_Terminal\List\STM32ucshell_tx_demo.map
+#    Command line =
+#        -f C:\Users\Dell\AppData\Local\Temp\EW2659.tmp
+#        (E:\DiskE\ThreadX_RTOS\IAROutFile\uart\crc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\dma.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\gpio.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\lib_ascii.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\lib_math.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\lib_mem.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\lib_str.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\main.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\rtc.o
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\LibFile\SEGGER_RTT.a
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\sh_shell.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\shell.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\startup_stm32f103xb.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\stm32f1xx_hal_msp.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\stm32f1xx_hal_timebase_tim.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\stm32f1xx_it_user.o
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\LibFile\STM32Lib.a
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\LibFile\STM32uart_DMA.a
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\terminal.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\terminal_mode.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\terminal_os.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\terminal_serial.o
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\LibFile\ThreadX.a
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\tx_sample.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\usart.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\uart\User_IRQ_handler.o
+#        --no_out_extension -o
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM\Serial_Terminal\Exe\STM32ucshell_tx_demo.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM\Serial_Terminal\List\STM32ucshell_tx_demo.map
+#        --config
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM/stm32f103xb_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x801'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xec
+  .intvec            ro code   0x800'0000    0xec  startup_stm32f103xb.o [1]
+                             - 0x800'00ec    0xec
+
+"P1":                                      0x5449
+  .text              ro code   0x800'00ec   0x4f2  stm32f1xx_hal_rcc.o [3]
+  .text              ro code   0x800'05de    0x3a  zero_init3.o [7]
+  .text              ro code   0x800'0618     0xc  stm32f1xx_hal.o [3]
+  .text              ro code   0x800'0624    0x78  stm32f1xx_hal_timebase_tim.o [1]
+  .text              ro code   0x800'069c    0x98  stm32f1xx_hal_cortex.o [3]
+  .text              ro code   0x800'0734   0x272  stm32f1xx_hal_tim.o [3]
+  .text              ro code   0x800'09a6     0x2  stm32f1xx_hal_tim.o [3]
+  .text              ro code   0x800'09a8     0x2  stm32f1xx_hal_tim.o [3]
+  .text              ro code   0x800'09ac    0xdc  main.o [1]
+  .text              ro code   0x800'0a88     0x2  stm32f1xx_hal_tim_ex.o [3]
+  .text              ro code   0x800'0a8a     0x2  stm32f1xx_hal_tim.o [3]
+  .text              ro code   0x800'0a8c     0x2  stm32f1xx_hal_tim_ex.o [3]
+  .text              ro code   0x800'0a8e     0x2  stm32f1xx_hal_tim.o [3]
+  .text              ro code   0x800'0a90    0x24  stm32f1xx_hal.o [3]
+  .text              ro code   0x800'0ab4    0xa4  gpio.o [1]
+  .text              ro code   0x800'0b58    0xf8  dma.o [1]
+  .text              ro code   0x800'0c50    0x74  rtc.o [1]
+  .text              ro code   0x800'0cc4   0x3d0  usart.o [1]
+  .text              ro code   0x800'1094    0x48  crc.o [1]
+  .text              ro code   0x800'10dc    0x48  tx_initialize_kernel_enter.o [5]
+  .text              ro code   0x800'1124     0x6  ABImemclr4.o [7]
+  .text              ro code   0x800'112c   0x1b2  stm32f1xx_hal_rcc_ex.o [3]
+  .text              ro code   0x800'12e0    0x10  stm32f1xx_hal.o [3]
+  .text              ro code   0x800'12f0   0x3fc  SEGGER_RTT_printf.o [2]
+  .text              ro code   0x800'16ec    0x44  stm32f1xx_hal_msp.o [1]
+  .text              ro code   0x800'1730    0x14  memset.o [7]
+  .text              ro code   0x800'1744   0x1b4  stm32f1xx_hal_gpio.o [3]
+  .text              ro code   0x800'18f8   0x13e  stm32f1xx_hal_rtc.o [3]
+  .text              ro code   0x800'1a38    0x10  stm32f1xx_hal_pwr.o [3]
+  .text              ro code   0x800'1a48   0x300  stm32f1xx_hal_uart.o [3]
+  .text              ro code   0x800'1d48    0xe8  stm32f1xx_ll_gpio.o [3]
+  .text              ro code   0x800'1e30    0xac  stm32f1xx_ll_usart.o [3]
+  .text              ro code   0x800'1edc   0x264  stm32f1xx_hal_dma.o [3]
+  .text              ro code   0x800'2140    0x20  stm32f1xx_hal_crc.o [3]
+  .text              ro code   0x800'2160    0x74  tx_initialize_low_level.o [5]
+  .text              ro code   0x800'21d4    0x24  tx_initialize_high_level.o [5]
+  .text              ro code   0x800'21f8   0x158  tx_sample.o [1]
+  .text              ro code   0x800'2350    0xac  tx_thread_schedule.o [5]
+  .text              ro code   0x800'23fc    0x32  ABImemset48.o [7]
+  .text              ro code   0x800'2430   0x298  SEGGER_RTT.o [2]
+  .text              ro code   0x800'26c8    0x66  ABImemset.o [7]
+  .text              ro code   0x800'272e     0x2  stm32f1xx_hal_uart.o [3]
+  .text              ro code   0x800'2730     0x2  stm32f1xx_hal_uart.o [3]
+  .text              ro code   0x800'2732     0x2  stm32f1xx_hal_uart.o [3]
+  .text              ro code   0x800'2734    0xa0  stm32f1xx_ll_rcc.o [3]
+  .text              ro code   0x800'27d4    0xe8  tx_timer_interrupt.o [5]
+  .text              ro code   0x800'28bc    0x84  tx_thread_initialize.o [5]
+  .text              ro code   0x800'2940    0xec  tx_timer_initialize.o [5]
+  .text              ro code   0x800'2a2c    0x18  tx_semaphore_initialize.o [5]
+  .text              ro code   0x800'2a44    0x18  tx_queue_initialize.o [5]
+  .text              ro code   0x800'2a5c    0x18  tx_event_flags_initialize.o [5]
+  .text              ro code   0x800'2a74    0x18  tx_block_pool_initialize.o [5]
+  .text              ro code   0x800'2a8c    0x18  tx_byte_pool_initialize.o [5]
+  .text              ro code   0x800'2aa4    0x18  tx_mutex_initialize.o [5]
+  .text              ro code   0x800'2abc    0xd8  txe_byte_pool_create.o [5]
+  .text              ro code   0x800'2b94    0xc0  txe_byte_allocate.o [5]
+  .text              ro code   0x800'2c54   0x168  txe_thread_create.o [5]
+  .text              ro code   0x800'2dbc   0x21c  shell.o [1]
+  .text              ro code   0x800'2fd8   0x138  sh_shell.o [1]
+  .text              ro code   0x800'3110   0x150  terminal.o [1]
+  .text              ro code   0x800'3260    0x9c  tx_thread_sleep.o [5]
+  .text              ro code   0x800'32fc    0x18  strcpy.o [7]
+  .text              ro code   0x800'3314    0xa6  ABImemcpy.o [7]
+  .text              ro code   0x800'33bc    0x36  strlen.o [7]
+  .text              ro code   0x800'33f4    0x24  tx_timer_expiration_process.o [5]
+  .text              ro code   0x800'3418    0x68  tx_thread_time_slice.o [5]
+  .text              ro code   0x800'3480    0x50  tx_misra.o [5]
+  .text              ro code   0x800'34d0   0x148  tx_thread_create.o [5]
+  .text              ro code   0x800'3618     0x8  tx_thread_interrupt_disable.o [5]
+  .text              ro code   0x800'3620     0x6  tx_thread_interrupt_restore.o [5]
+  .text              ro code   0x800'3628    0x28  tx_thread_system_preempt_check.o [5]
+  .text              ro code   0x800'3650    0xe8  tx_byte_pool_create.o [5]
+  .text              ro code   0x800'3738    0xf4  tx_byte_allocate.o [5]
+  .text              ro code   0x800'382c    0xf8  lib_str.o [1]
+  .text              ro code   0x800'3924   0x12c  terminal_serial.o [1]
+  .text              ro code   0x800'3a50    0x6c  terminal_os.o [1]
+  .text              ro code   0x800'3abc    0x42  lib_mem.o [1]
+  .text              ro code   0x800'3b00   0x284  terminal_mode.o [1]
+  .text              ro code   0x800'3d84   0x258  tx_thread_system_suspend.o [5]
+  .text              ro code   0x800'3fdc   0x108  tx_thread_system_resume.o [5]
+  .text              ro code   0x800'40e4    0x44  tx_thread_stack_build.o [5]
+  .text              ro code   0x800'4128    0x20  tx_thread_system_return.o [5]
+  .text              ro code   0x800'4148   0x18c  tx_byte_pool_search.o [5]
+  .text              ro code   0x800'42d4    0xc4  txe_semaphore_create.o [5]
+  .text              ro code   0x800'4398   0x210  User_hal_uart.o [4]
+  .text              ro code   0x800'45a8    0x58  txe_semaphore_delete.o [5]
+  .text              ro code   0x800'4600    0x60  txe_semaphore_get.o [5]
+  .text              ro code   0x800'4660    0x20  txe_semaphore_put.o [5]
+  .text              ro code   0x800'4680    0x10  lib_ascii.o [1]
+  .text              ro code   0x800'4690    0x7c  tx_timer_system_activate.o [5]
+  .text              ro code   0x800'470c    0x2e  tx_timer_system_deactivate.o [5]
+  .text              ro code   0x800'473c    0x58  tx_semaphore_create.o [5]
+  .text              ro code   0x800'4794   0x32a  User_hal_dma.o [4]
+  .text              ro code   0x800'4ac0    0x98  tx_semaphore_delete.o [5]
+  .text              ro code   0x800'4b58    0x9c  tx_semaphore_get.o [5]
+  .text              ro code   0x800'4bf4    0x78  tx_semaphore_put.o [5]
+  .rodata            const     0x800'4c6c   0x258  tx_sample.o [1]
+  .text              ro code   0x800'4ec4   0x144  tx_timer_thread_entry.o [5]
+  .text              ro code   0x800'5008    0x94  tx_byte_pool_cleanup.o [5]
+  .text              ro code   0x800'509c    0x94  tx_semaphore_cleanup.o [5]
+  .rodata            const     0x800'5130    0x84  sh_shell.o [1]
+  .text              ro code   0x800'51b4    0x74  tx_thread_shell_entry.o [5]
+  .text              ro code   0x800'5228    0x46  stm32f1xx_it_user.o [1]
+  .text              ro code   0x800'5270    0x3e  stm32f1xx_hal_rtc_ex.o [3]
+  .text              ro code   0x800'52ae     0x2  stm32f1xx_hal_rtc_ex.o [3]
+  .text              ro code   0x800'52b0     0x2  stm32f1xx_hal_rtc_ex.o [3]
+  .text              ro code   0x800'52b4    0x44  tx_thread_timeout.o [5]
+  .rodata            const     0x800'52f8    0x3c  main.o [1]
+  .text              ro code   0x800'5334    0x38  packbits_init_single.o [7]
+  .text              ro code   0x800'536c    0x28  data_init.o [7]
+  .iar.init_table    const     0x800'5394    0x20  - Linker created -
+  .text              ro code   0x800'53b4    0x20  User_IRQ_handler.o [1]
+  .text              ro code   0x800'53d4    0x1e  cmain.o [7]
+  .text              ro code   0x800'53f2     0x4  low_level_init.o [6]
+  .text              ro code   0x800'53f6     0x4  exit.o [6]
+  .text              ro code   0x800'53fc     0xa  cexit.o [7]
+  .text              ro code   0x800'5408    0x14  exit.o [8]
+  .rodata            const     0x800'541c    0x14  tx_timer_initialize.o [5]
+  .text              ro code   0x800'5430    0x14  system_stm32f1xx.o [3]
+  .rodata            const     0x800'5444    0x10  SEGGER_RTT_printf.o [2]
+  .text              ro code   0x800'5454    0x10  startup_stm32f103xb.o [1]
+  .rodata            const     0x800'5464     0xc  SEGGER_RTT.o [2]
+  .text              ro code   0x800'5470     0xc  cstartup_M.o [7]
+  .rodata            const     0x800'547c     0x8  sh_shell.o [1]
+  .rodata            const     0x800'5484     0x8  system_stm32f1xx.o [3]
+  .rodata            const     0x800'548c     0x8  SEGGER_RTT.o [2]
+  .text              ro code   0x800'5494     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'5498     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'549c     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54a0     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54a4     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54a8     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54ac     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54b0     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54b4     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54b8     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54bc     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54c0     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54c4     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54c8     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54cc     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54d0     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54d4     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54d8     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54dc     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54e0     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54e4     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54e8     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54ec     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54f0     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54f4     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54f8     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'54fc     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'5500     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'5504     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'5508     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'550c     0x4  startup_stm32f103xb.o [1]
+  .text              ro code   0x800'5510     0x4  startup_stm32f103xb.o [1]
+  .rodata            const     0x800'5514     0x0  zero_init3.o [7]
+  .rodata            const     0x800'5514     0x0  packbits_init_single.o [7]
+  Initializer bytes  const     0x800'5514    0x21  <for P2-1>
+                             - 0x800'5535  0x5449
+
+"P2", part 1 of 3:                           0x2c
+  P2-1                        0x2000'0000    0x2c  <Init block>
+    .data            inited   0x2000'0000    0x10  sh_shell.o [1]
+    .data            inited   0x2000'0010     0x8  terminal_mode.o [1]
+    .data            inited   0x2000'0018     0xc  stm32f1xx_hal.o [3]
+    .data            inited   0x2000'0024     0x4  system_stm32f1xx.o [3]
+    .data            inited   0x2000'0028     0x4  tx_thread_initialize.o [5]
+                            - 0x2000'002c    0x2c
+
+"P2", part 2 of 3:                         0x3330
+  .bss               zero     0x2000'002c  0x2488  tx_sample.o [1]
+  .bss               zero     0x2000'24b4   0x400  SEGGER_RTT.o [2]
+  .bss               zero     0x2000'28b4   0x400  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'2cb4   0x110  usart.o [1]
+  .bss               zero     0x2000'2dc4    0xb4  terminal_os.o [1]
+  .bss               zero     0x2000'2e78    0xb4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'2f2c    0xa8  terminal_serial.o [1]
+  .bss               zero     0x2000'2fd4    0xa8  SEGGER_RTT.o [2]
+  .bss               zero     0x2000'307c    0x80  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'30fc    0x80  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'317c    0x48  stm32f1xx_hal_timebase_tim.o [1]
+  .bss               zero     0x2000'31c4    0x44  shell.o [1]
+  .bss               zero     0x2000'3208    0x40  usart.o [1]
+  .bss               zero     0x2000'3248    0x40  usart.o [1]
+  .bss               zero     0x2000'3288    0x14  rtc.o [1]
+  .bss               zero     0x2000'329c    0x10  SEGGER_RTT.o [2]
+  FREE_MEM           zero     0x2000'32ac    0x10  tx_initialize_low_level.o [5]
+  .bss               zero     0x2000'32bc     0x8  crc.o [1]
+  .bss               zero     0x2000'32c4     0x4  tx_sample.o [1]
+  .bss               zero     0x2000'32c8     0x4  tx_initialize_high_level.o [5]
+  .bss               zero     0x2000'32cc     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32d0     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32d4     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32d8     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32dc     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32e0     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32e4     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32e8     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32ec     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32f0     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32f4     0x4  tx_thread_initialize.o [5]
+  .bss               zero     0x2000'32f8     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'32fc     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3300     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3304     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3308     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'330c     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3310     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3314     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3318     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'331c     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3320     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3324     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'3328     0x4  tx_timer_initialize.o [5]
+  .bss               zero     0x2000'332c     0x4  tx_semaphore_initialize.o [5]
+  .bss               zero     0x2000'3330     0x4  tx_semaphore_initialize.o [5]
+  .bss               zero     0x2000'3334     0x4  tx_byte_pool_initialize.o [5]
+  .bss               zero     0x2000'3338     0x4  tx_byte_pool_initialize.o [5]
+  .bss               zero     0x2000'333c     0x4  tx_block_pool_initialize.o [5]
+  .bss               zero     0x2000'3340     0x4  tx_block_pool_initialize.o [5]
+  .bss               zero     0x2000'3344     0x4  tx_event_flags_initialize.o [5]
+  .bss               zero     0x2000'3348     0x4  tx_event_flags_initialize.o [5]
+  .bss               zero     0x2000'334c     0x4  tx_mutex_initialize.o [5]
+  .bss               zero     0x2000'3350     0x4  tx_mutex_initialize.o [5]
+  .bss               zero     0x2000'3354     0x4  tx_queue_initialize.o [5]
+  .bss               zero     0x2000'3358     0x4  tx_queue_initialize.o [5]
+                            - 0x2000'335c  0x3330
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'3360   0x400  <Block>
+    CSTACK           uninit   0x2000'3360   0x400  <Block tail>
+                            - 0x2000'3760   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'5535   0x801'ffff  0x1'aacb
+  0x2000'335c  0x2000'335f       0x4
+  0x2000'3760  0x2000'4fff    0x18a0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x3330:
+          0x2000'002c  0x3330
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x21 (75% of destination):
+           0x800'5514    0x21
+    1 destination range, total size 0x2c:
+          0x2000'0000    0x2c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                            ro code  ro data  rw data
+    ------                            -------  -------  -------
+command line/config:
+    -----------------------------------------------------------
+    Total:
+
+E:\DiskE\ThreadX_RTOS\IAROutFile\uart: [1]
+    User_IRQ_handler.o                     32
+    crc.o                                  72                 8
+    dma.o                                 248
+    gpio.o                                164
+    lib_ascii.o                            16
+    lib_mem.o                              66
+    lib_str.o                             248
+    main.o                                220       60
+    rtc.o                                 116                20
+    sh_shell.o                            312      152       16
+    shell.o                               540                68
+    startup_stm32f103xb.o                 380
+    stm32f1xx_hal_msp.o                    68
+    stm32f1xx_hal_timebase_tim.o          120                72
+    stm32f1xx_it_user.o                    70
+    terminal.o                            336
+    terminal_mode.o                       644        6        8
+    terminal_os.o                         108               180
+    terminal_serial.o                     300               168
+    tx_sample.o                           344      600    9'356
+    usart.o                               976               400
+    -----------------------------------------------------------
+    Total:                              5'380      818   10'296
+
+SEGGER_RTT.a: [2]
+    SEGGER_RTT.o                          664       20    1'208
+    SEGGER_RTT_printf.o                 1'020       16
+    -----------------------------------------------------------
+    Total:                              1'684       36    1'208
+
+STM32Lib.a: [3]
+    stm32f1xx_hal.o                        64        9       12
+    stm32f1xx_hal_cortex.o                152
+    stm32f1xx_hal_crc.o                    32
+    stm32f1xx_hal_dma.o                   612
+    stm32f1xx_hal_gpio.o                  436
+    stm32f1xx_hal_pwr.o                    16
+    stm32f1xx_hal_rcc.o                 1'266
+    stm32f1xx_hal_rcc_ex.o                434
+    stm32f1xx_hal_rtc.o                   318
+    stm32f1xx_hal_rtc_ex.o                 66
+    stm32f1xx_hal_tim.o                   634
+    stm32f1xx_hal_tim_ex.o                  4
+    stm32f1xx_hal_uart.o                  774
+    stm32f1xx_ll_gpio.o                   232
+    stm32f1xx_ll_rcc.o                    160
+    stm32f1xx_ll_usart.o                  172
+    system_stm32f1xx.o                     20       11        4
+    -----------------------------------------------------------
+    Total:                              5'392       20       16
+
+STM32uart_DMA.a: [4]
+    User_hal_dma.o                        810
+    User_hal_uart.o                       528
+    -----------------------------------------------------------
+    Total:                              1'338
+
+ThreadX.a: [5]
+    tx_block_pool_initialize.o             24                 8
+    tx_byte_allocate.o                    244
+    tx_byte_pool_cleanup.o                148
+    tx_byte_pool_create.o                 232
+    tx_byte_pool_initialize.o              24                 8
+    tx_byte_pool_search.o                 396
+    tx_event_flags_initialize.o            24                 8
+    tx_initialize_high_level.o             36                 4
+    tx_initialize_kernel_enter.o           72
+    tx_initialize_low_level.o             116                16
+    tx_misra.o                             80
+    tx_mutex_initialize.o                  24                 8
+    tx_queue_initialize.o                  24                 8
+    tx_semaphore_cleanup.o                148
+    tx_semaphore_create.o                  88
+    tx_semaphore_delete.o                 152
+    tx_semaphore_get.o                    156
+    tx_semaphore_initialize.o              24                 8
+    tx_semaphore_put.o                    120
+    tx_thread_create.o                    328
+    tx_thread_initialize.o                132        3      176
+    tx_thread_interrupt_disable.o           8
+    tx_thread_interrupt_restore.o           6
+    tx_thread_schedule.o                  172
+    tx_thread_shell_entry.o               116
+    tx_thread_sleep.o                     156
+    tx_thread_stack_build.o                68
+    tx_thread_system_preempt_check.o       40
+    tx_thread_system_resume.o             264
+    tx_thread_system_return.o              32
+    tx_thread_system_suspend.o            600
+    tx_thread_time_slice.o                104
+    tx_thread_timeout.o                    68
+    tx_timer_expiration_process.o          36
+    tx_timer_initialize.o                 236       20    1'384
+    tx_timer_interrupt.o                  232
+    tx_timer_system_activate.o            124
+    tx_timer_system_deactivate.o           46
+    tx_timer_thread_entry.o               324
+    txe_byte_allocate.o                   192
+    txe_byte_pool_create.o                216
+    txe_semaphore_create.o                196
+    txe_semaphore_delete.o                 88
+    txe_semaphore_get.o                    96
+    txe_semaphore_put.o                    32
+    txe_thread_create.o                   360
+    -----------------------------------------------------------
+    Total:                              6'404       23    1'628
+
+dl7M_tlf.a: [6]
+    exit.o                                  4
+    low_level_init.o                        4
+    -----------------------------------------------------------
+    Total:                                  8
+
+rt7M_tl.a: [7]
+    ABImemclr4.o                            6
+    ABImemcpy.o                           166
+    ABImemset.o                           102
+    ABImemset48.o                          50
+    cexit.o                                10
+    cmain.o                                30
+    cstartup_M.o                           12
+    data_init.o                            40
+    memset.o                               20
+    packbits_init_single.o                 56
+    strcpy.o                               24
+    strlen.o                               54
+    zero_init3.o                           58
+    -----------------------------------------------------------
+    Total:                                628
+
+shb_l.a: [8]
+    exit.o                                 20
+    -----------------------------------------------------------
+    Total:                                 20
+
+    Gaps                                   30
+    Linker created                                  32    1'024
+---------------------------------------------------------------
+    Grand Total:                       20'884      929   14'172
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base    0x800'5394           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'53b4           --   Gb  - Linker created -
+?main                    0x800'53d5          Code  Gb  cmain.o [7]
+AHBPrescTable            0x800'5434    0x10  Data  Gb  system_stm32f1xx.o [3]
+APBPrescTable            0x800'5484     0x8  Data  Gb  system_stm32f1xx.o [3]
+ASCII_IsPrint            0x800'468b     0x6  Code  Gb  lib_ascii.o [1]
+BusFault_Handler         0x800'522f     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+CHANNEL_OFFSET_TAB       0x800'108c     0x8  Data  Lc  usart.o [1]
+CSTACK$$Base            0x2000'3360           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'3760           --   Gb  - Linker created -
+DMA1_Channel2_IRQHandler
+                         0x800'523d     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+DMA1_Channel3_IRQHandler
+                         0x800'523f     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+DMA1_Channel4_IRQHandler
+                         0x800'53b5     0x6  Code  Gb  User_IRQ_handler.o [1]
+DMA1_Channel5_IRQHandler
+                         0x800'53bb     0x6  Code  Gb  User_IRQ_handler.o [1]
+DMA1_Channel6_IRQHandler
+                         0x800'5241     0x6  Code  Gb  stm32f1xx_it_user.o [1]
+DMA1_Channel7_IRQHandler
+                         0x800'5247     0x6  Code  Gb  stm32f1xx_it_user.o [1]
+DMA_SetConfig            0x800'4a9d    0x22  Code  Lc  User_hal_dma.o [4]
+DebugMon_Handler         0x800'5235     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+Error_Handler            0x800'0a71     0xe  Code  Gb  main.o [1]
+HAL_CRC_Init             0x800'2141    0x20  Code  Gb  stm32f1xx_hal_crc.o [3]
+HAL_CRC_MspInit          0x800'10ad    0x22  Code  Gb  crc.o [1]
+HAL_DMA_Abort_IT         0x800'1f37    0x94  Code  Gb  stm32f1xx_hal_dma.o [3]
+HAL_DMA_IRQHandler       0x800'1fd7   0x144  Code  Gb  stm32f1xx_hal_dma.o [3]
+HAL_DMA_Init             0x800'1edd    0x5a  Code  Gb  stm32f1xx_hal_dma.o [3]
+HAL_DMA_Rx_IRQHandler    0x800'4843    0xfe  Code  Gb  User_hal_dma.o [4]
+HAL_DMA_Rx_Start_IT      0x800'47cd    0x38  Code  Gb  User_hal_dma.o [4]
+HAL_DMA_Tx_IRQHandler    0x800'4941    0xbc  Code  Gb  User_hal_dma.o [4]
+HAL_DMA_Tx_Start_IT      0x800'4795    0x38  Code  Gb  User_hal_dma.o [4]
+HAL_GPIO_Init            0x800'1745   0x180  Code  Gb  stm32f1xx_hal_gpio.o [3]
+HAL_GetTick              0x800'0619     0xc  Code  Wk  stm32f1xx_hal.o [3]
+HAL_IncTick              0x800'12e1    0x10  Code  Wk  stm32f1xx_hal.o [3]
+HAL_Init                 0x800'0a91    0x20  Code  Gb  stm32f1xx_hal.o [3]
+HAL_InitTick             0x800'0625    0x68  Code  Gb  stm32f1xx_hal_timebase_tim.o [1]
+HAL_MspInit              0x800'16ed    0x44  Code  Gb  stm32f1xx_hal_msp.o [1]
+HAL_NVIC_EnableIRQ       0x800'070b    0x16  Code  Gb  stm32f1xx_hal_cortex.o [3]
+HAL_NVIC_SetPriority     0x800'06d1    0x3a  Code  Gb  stm32f1xx_hal_cortex.o [3]
+HAL_NVIC_SetPriorityGrouping
+                         0x800'06b7    0x1a  Code  Gb  stm32f1xx_hal_cortex.o [3]
+HAL_PWR_EnableBkUpAccess
+                         0x800'1a39     0x4  Code  Gb  stm32f1xx_hal_pwr.o [3]
+HAL_RCCEx_GetPeriphCLKFreq
+                         0x800'1209    0xac  Code  Gb  stm32f1xx_hal_rcc_ex.o [3]
+HAL_RCCEx_GetPeriphCLKFreq::aPLLMULFactorTable
+                         0x800'12cc    0x10  Data  Lc  stm32f1xx_hal_rcc_ex.o [3]
+HAL_RCCEx_GetPeriphCLKFreq::aPredivFactorTable
+                         0x800'12dc     0x2  Data  Lc  stm32f1xx_hal_rcc_ex.o [3]
+HAL_RCCEx_PeriphCLKConfig
+                         0x800'112d    0xda  Code  Gb  stm32f1xx_hal_rcc_ex.o [3]
+HAL_RCC_ClockConfig      0x800'0401    0xf4  Code  Gb  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_GetClockConfig   0x800'0567    0x36  Code  Gb  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_GetPCLK1Freq     0x800'0543    0x10  Code  Gb  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_GetPCLK2Freq     0x800'0553     0xe  Code  Gb  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_GetSysClockFreq
+                         0x800'0509    0x3a  Code  Gb  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_GetSysClockFreq::aPLLMULFactorTable
+                         0x800'05cc    0x10  Data  Lc  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_GetSysClockFreq::aPredivFactorTable
+                         0x800'05dc     0x2  Data  Lc  stm32f1xx_hal_rcc.o [3]
+HAL_RCC_OscConfig        0x800'00ed   0x30c  Code  Gb  stm32f1xx_hal_rcc.o [3]
+HAL_RTCEx_RTCIRQHandler
+                         0x800'5271    0x3e  Code  Gb  stm32f1xx_hal_rtc_ex.o [3]
+HAL_RTC_Init             0x800'18f9    0x98  Code  Gb  stm32f1xx_hal_rtc.o [3]
+HAL_RTC_MspInit          0x800'0c75    0x3e  Code  Gb  rtc.o [1]
+HAL_RTC_WaitForSynchro   0x800'1995    0x2e  Code  Gb  stm32f1xx_hal_rtc.o [3]
+HAL_TIMEx_BreakCallback
+                         0x800'0a89     0x2  Code  Wk  stm32f1xx_hal_tim_ex.o [3]
+HAL_TIMEx_CommutCallback
+                         0x800'0a8d     0x2  Code  Wk  stm32f1xx_hal_tim_ex.o [3]
+HAL_TIM_Base_Init        0x800'0735    0x1a  Code  Gb  stm32f1xx_hal_tim.o [3]
+HAL_TIM_Base_Start_IT    0x800'074f    0x5c  Code  Gb  stm32f1xx_hal_tim.o [3]
+HAL_TIM_IRQHandler       0x800'07ed   0x142  Code  Gb  stm32f1xx_hal_tim.o [3]
+HAL_TIM_PeriodElapsedCallback
+                         0x800'0a63     0xe  Code  Gb  main.o [1]
+HAL_UART1_IRQHandler     0x800'446b    0xb8  Code  Gb  User_hal_uart.o [4]
+HAL_UART1_Receive_DMA    0x800'43ed    0x7e  Code  Gb  User_hal_uart.o [4]
+HAL_UART1_Transmit_DMA   0x800'4399    0x54  Code  Gb  User_hal_uart.o [4]
+HAL_UART_IRQHandler      0x800'1acb   0x152  Code  Gb  stm32f1xx_hal_uart.o [3]
+HAL_UART_Init            0x800'1a49    0x1e  Code  Gb  stm32f1xx_hal_uart.o [3]
+HAL_UART_MspInit         0x800'0ec1   0x150  Code  Gb  usart.o [1]
+HardFault_Handler        0x800'522b     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+LL_DMA_SetChannelPriorityLevel
+                         0x800'0d31     0xc  Code  Lc  usart.o [1]
+LL_DMA_SetDataTransferDirection
+                         0x800'0cc5    0x1c  Code  Lc  usart.o [1]
+LL_DMA_SetMemoryIncMode
+                         0x800'0cfd     0xc  Code  Lc  usart.o [1]
+LL_DMA_SetMemorySize     0x800'0d25     0xc  Code  Lc  usart.o [1]
+LL_DMA_SetMode           0x800'0ce1     0xc  Code  Lc  usart.o [1]
+LL_DMA_SetPeriphIncMode
+                         0x800'0ced     0xa  Code  Lc  usart.o [1]
+LL_DMA_SetPeriphSize     0x800'0d09     0xc  Code  Lc  usart.o [1]
+LL_GPIO_Init             0x800'1d49    0xd8  Code  Gb  stm32f1xx_ll_gpio.o [3]
+LL_RCC_GetSystemClocksFreq
+                         0x800'2735    0x20  Code  Gb  stm32f1xx_ll_rcc.o [3]
+LL_USART_Init            0x800'1e31    0x98  Code  Gb  stm32f1xx_ll_usart.o [3]
+MX_CRC_Init              0x800'1095    0x18  Code  Gb  crc.o [1]
+MX_DMA_Init              0x800'0ba5    0x96  Code  Gb  dma.o [1]
+MX_GPIO_Init             0x800'0ab5    0xa4  Code  Gb  gpio.o [1]
+MX_RTC_Init              0x800'0c51    0x24  Code  Gb  rtc.o [1]
+MX_USART1_UART_Init      0x800'0d3d    0x10  Code  Gb  usart.o [1]
+MX_USART2_UART_Init      0x800'0d4d    0x10  Code  Gb  usart.o [1]
+MX_USART3_UART_Init      0x800'0d81   0x130  Code  Gb  usart.o [1]
+MemManage_Handler        0x800'522d     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+Mem_Set                  0x800'3abd    0x42  Code  Gb  lib_mem.o [1]
+NMI_Handler              0x800'5229     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+NVIC_EncodePriority      0x800'0b73    0x32  Code  Lc  dma.o [1]
+PendSV_Handler           0x800'2371          Code  Gb  tx_thread_schedule.o [5]
+RCC_GetHCLKClockFreq     0x800'2769     0xc  Code  Gb  stm32f1xx_ll_rcc.o [3]
+RCC_GetPCLK1ClockFreq    0x800'2775     0xa  Code  Gb  stm32f1xx_ll_rcc.o [3]
+RCC_GetPCLK2ClockFreq    0x800'2785     0xc  Code  Gb  stm32f1xx_ll_rcc.o [3]
+RCC_GetSystemClockFreq   0x800'2755    0x14  Code  Gb  stm32f1xx_ll_rcc.o [3]
+RCC_PLL_GetFreqDomain_SYS
+                         0x800'2791    0x2c  Code  Gb  stm32f1xx_ll_rcc.o [3]
+RTC_EnterInitMode        0x800'19d3    0x2c  Code  Lc  stm32f1xx_hal_rtc.o [3]
+RTC_ExitInitMode         0x800'1a09    0x2e  Code  Lc  stm32f1xx_hal_rtc.o [3]
+RTC_IRQHandler           0x800'5237     0x6  Code  Gb  stm32f1xx_it_user.o [1]
+Region$$Table$$Base      0x800'5394           --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'53b4           --   Gb  - Linker created -
+SEGGER_RTT_ConfigUpBuffer
+                         0x800'2639    0x7c  Code  Gb  SEGGER_RTT.o [2]
+SEGGER_RTT_Write         0x800'25f1    0x30  Code  Gb  SEGGER_RTT.o [2]
+SEGGER_RTT_WriteNoLock   0x800'2585    0x6c  Code  Gb  SEGGER_RTT.o [2]
+SEGGER_RTT_WriteString   0x800'2621    0x18  Code  Gb  SEGGER_RTT.o [2]
+SEGGER_RTT_printf        0x800'16d9    0x14  Code  Gb  SEGGER_RTT_printf.o [2]
+SEGGER_RTT_vprintf       0x800'14e7   0x1f2  Code  Gb  SEGGER_RTT_printf.o [2]
+SVC_Handler              0x800'5233     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+ShShell_CmdTbl          0x2000'0000    0x10  Data  Lc  sh_shell.o [1]
+ShShell_Init             0x800'2fd9    0x18  Code  Gb  sh_shell.o [1]
+ShShell_help             0x800'2ff1    0xe0  Code  Lc  sh_shell.o [1]
+Shell_CmdTblAdd          0x800'2ee9    0x90  Code  Gb  shell.o [1]
+Shell_Exec               0x800'2ded    0xfc  Code  Gb  shell.o [1]
+Shell_Init               0x800'2dbd    0x30  Code  Gb  shell.o [1]
+Shell_ModuleCmdClr       0x800'2fbb    0x14  Code  Lc  shell.o [1]
+Shell_ModuleCmdFreePoolPtr
+                        0x2000'31c8     0x4  Data  Gb  shell.o [1]
+Shell_ModuleCmdNameGet   0x800'2f79    0x42  Code  Lc  shell.o [1]
+Shell_ModuleCmdTbl      0x2000'31cc    0x3c  Data  Gb  shell.o [1]
+Shell_ModuleCmdUsedPoolPtr
+                        0x2000'31c4     0x4  Data  Gb  shell.o [1]
+Str_Cat                  0x800'3879     0x4  Code  Gb  lib_str.o [1]
+Str_Cat_N                0x800'387d    0x36  Code  Gb  lib_str.o [1]
+Str_Cmp                  0x800'38c1     0x4  Code  Gb  lib_str.o [1]
+Str_Cmp_N                0x800'38c5    0x60  Code  Gb  lib_str.o [1]
+Str_Copy                 0x800'3847     0x4  Code  Gb  lib_str.o [1]
+Str_Copy_N               0x800'384b    0x2e  Code  Gb  lib_str.o [1]
+Str_Len                  0x800'382d     0x4  Code  Gb  lib_str.o [1]
+Str_Len_N                0x800'3831    0x16  Code  Gb  lib_str.o [1]
+SysTick_Handler          0x800'21a7          Code  Gb  tx_initialize_low_level.o [5]
+SystemClock_Config       0x800'09d9    0x8a  Code  Gb  main.o [1]
+SystemCoreClock         0x2000'0024     0x4  Data  Gb  system_stm32f1xx.o [3]
+SystemInit               0x800'5431     0x2  Code  Gb  system_stm32f1xx.o [3]
+TIM4_IRQHandler          0x800'524d     0x6  Code  Gb  stm32f1xx_it_user.o [1]
+TIM_Base_SetConfig       0x800'0935    0x5e  Code  Gb  stm32f1xx_hal_tim.o [3]
+TerminalMode_Clr         0x800'3d27    0x2e  Code  Gb  terminal_mode.o [1]
+TerminalMode_NewLine     0x800'3d55     0x8  Code  Gb  terminal_mode.o [1]
+TerminalMode_Prompt      0x800'3d71     0xa  Code  Gb  terminal_mode.o [1]
+TerminalMode_RdLine      0x800'3b01   0x220  Code  Gb  terminal_mode.o [1]
+TerminalSerial_Exit      0x800'394d    0x14  Code  Gb  terminal_serial.o [1]
+TerminalSerial_Init      0x800'3925    0x28  Code  Gb  terminal_serial.o [1]
+TerminalSerial_RdByte    0x800'3971    0x30  Code  Gb  terminal_serial.o [1]
+TerminalSerial_RdByte::c
+                        0x2000'2f2d     0x1  Data  Lc  terminal_serial.o [1]
+TerminalSerial_Wr        0x800'3961    0x10  Code  Gb  terminal_serial.o [1]
+TerminalSerial_WrByte    0x800'39a1     0xe  Code  Gb  terminal_serial.o [1]
+Terminal_Init            0x800'3111    0x20  Code  Gb  terminal.o [1]
+Terminal_OS_Init         0x800'3a55    0x4e  Code  Gb  terminal_os.o [1]
+Terminal_OS_Task         0x800'3a51     0x4  Code  Lc  terminal_os.o [1]
+Terminal_OS_Thread      0x2000'2dc4    0xb4  Data  Lc  terminal_os.o [1]
+Terminal_OutFnct         0x800'3241     0xc  Code  Lc  terminal.o [1]
+Terminal_Task            0x800'3131    0xf4  Code  Gb  terminal.o [1]
+Terminal_VT100_EscStrLeft
+                        0x2000'0010     0x4  Data  Lc  terminal_mode.o [1]
+Terminal_VT100_EscStrRight
+                        0x2000'0014     0x4  Data  Lc  terminal_mode.o [1]
+Terminal_WrChar          0x800'323d     0x4  Code  Gb  terminal.o [1]
+Terminal_WrStr           0x800'3239     0x4  Code  Gb  terminal.o [1]
+UART1_DMAError           0x800'4545    0x48  Code  Gb  User_hal_uart.o [4]
+UART1_DMATransmitCplt    0x800'4533    0x12  Code  Gb  User_hal_uart.o [4]
+UART1_EndRxTransfer      0x800'458d    0x1c  Code  Lc  User_hal_uart.o [4]
+UART1_ReceiveDMA_Callback
+                         0x800'39af    0x74  Code  Gb  terminal_serial.o [1]
+UART1_ReceiveDMA_Callback::old_pos
+                        0x2000'2f70     0x4  Data  Lc  terminal_serial.o [1]
+UART_DMAAbortOnError     0x800'1c39     0xc  Code  Lc  stm32f1xx_hal_uart.o [3]
+UART_EndRxTransfer       0x800'1c1d    0x1c  Code  Lc  stm32f1xx_hal_uart.o [3]
+UART_Receive_IT          0x800'1c45    0x84  Code  Lc  stm32f1xx_hal_uart.o [3]
+UART_SetConfig           0x800'1cc9    0x74  Code  Lc  stm32f1xx_hal_uart.o [3]
+USART1_IRQHandler        0x800'53c1     0x6  Code  Gb  User_IRQ_handler.o [1]
+USART2_IRQHandler        0x800'5253     0x6  Code  Gb  stm32f1xx_it_user.o [1]
+USART3_IRQHandler        0x800'526d     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+UsageFault_Handler       0x800'5231     0x2  Code  Gb  stm32f1xx_it_user.o [1]
+User_DMA_Abort_IT        0x800'49fd    0x82  Code  Gb  User_hal_dma.o [4]
+_DoInit                  0x800'2431    0x5c  Code  Lc  SEGGER_RTT.o [2]
+_GetAvailWriteSpace      0x800'2565    0x1a  Code  Lc  SEGGER_RTT.o [2]
+_PrintInt                0x800'1409    0xde  Code  Lc  SEGGER_RTT_printf.o [2]
+_PrintUnsigned           0x800'1333    0xd0  Code  Lc  SEGGER_RTT_printf.o [2]
+_PrintUnsigned::_aV2C    0x800'5444    0x10  Data  Lc  SEGGER_RTT_printf.o [2]
+_SEGGER_RTT             0x2000'2fd4    0xa8  Data  Gb  SEGGER_RTT.o [2]
+_StoreChar               0x800'12f1    0x42  Code  Lc  SEGGER_RTT_printf.o [2]
+_WriteBlocking           0x800'248d    0x82  Code  Lc  SEGGER_RTT.o [2]
+_WriteNoCheck            0x800'250f    0x56  Code  Lc  SEGGER_RTT.o [2]
+__NVIC_SetPriority       0x800'0b59    0x1a  Code  Lc  dma.o [1]
+__NVIC_SetPriority       0x800'069d    0x1a  Code  Lc  stm32f1xx_hal_cortex.o [3]
+__aeabi_memclr4          0x800'1125          Code  Gb  ABImemclr4.o [7]
+__aeabi_memcpy           0x800'3315          Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy4          0x800'3335          Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy8          0x800'3335          Code  Gb  ABImemcpy.o [7]
+__aeabi_memset           0x800'26c9          Code  Gb  ABImemset.o [7]
+__cmain                  0x800'53d5          Code  Gb  cmain.o [7]
+__exit                   0x800'5409    0x14  Code  Gb  exit.o [8]
+__iar_Memset             0x800'26c9          Code  Gb  ABImemset.o [7]
+__iar_Memset4_word       0x800'23fd          Code  Gb  ABImemset48.o [7]
+__iar_Memset8_word       0x800'23fd          Code  Gb  ABImemset48.o [7]
+__iar_Memset_word        0x800'26d1          Code  Gb  ABImemset.o [7]
+__iar_data_init3         0x800'536d    0x28  Code  Gb  data_init.o [7]
+__iar_packbits_init_single3
+                         0x800'5335    0x38  Code  Gb  packbits_init_single.o [7]
+__iar_program_start      0x800'5471          Code  Gb  cstartup_M.o [7]
+__iar_zero_init3         0x800'05df    0x3a  Code  Gb  zero_init3.o [7]
+__low_level_init         0x800'53f3     0x4  Code  Gb  low_level_init.o [6]
+__tx_PendSVHandler       0x800'2371          Code  Gb  tx_thread_schedule.o [5]
+__tx_SysTickHandler      0x800'21a7          Code  Gb  tx_initialize_low_level.o [5]
+__tx_free_memory_start  0x2000'32ac          Data  Gb  tx_initialize_low_level.o [5]
+__vector_table           0x800'0000          Data  Gb  startup_stm32f103xb.o [1]
+_acDownBuffer           0x2000'329c    0x10  Data  Lc  SEGGER_RTT.o [2]
+_acUpBuffer             0x2000'24b4   0x400  Data  Lc  SEGGER_RTT.o [2]
+_call_main               0x800'53e1          Code  Gb  cmain.o [7]
+_exit                    0x800'53fd          Code  Gb  cexit.o [7]
+_main                    0x800'53ef          Code  Gb  cmain.o [7]
+_tx_block_pool_created_count
+                        0x2000'3340     0x4  Data  Gb  tx_block_pool_initialize.o [5]
+_tx_block_pool_created_ptr
+                        0x2000'333c     0x4  Data  Gb  tx_block_pool_initialize.o [5]
+_tx_block_pool_initialize
+                         0x800'2a75    0x18  Code  Gb  tx_block_pool_initialize.o [5]
+_tx_build_options       0x2000'32f4     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_byte_allocate        0x800'3739    0xf4  Code  Gb  tx_byte_allocate.o [5]
+_tx_byte_pool_cleanup    0x800'5009    0x94  Code  Gb  tx_byte_pool_cleanup.o [5]
+_tx_byte_pool_create     0x800'3651    0xe8  Code  Gb  tx_byte_pool_create.o [5]
+_tx_byte_pool_created_count
+                        0x2000'3338     0x4  Data  Gb  tx_byte_pool_initialize.o [5]
+_tx_byte_pool_created_ptr
+                        0x2000'3334     0x4  Data  Gb  tx_byte_pool_initialize.o [5]
+_tx_byte_pool_initialize
+                         0x800'2a8d    0x18  Code  Gb  tx_byte_pool_initialize.o [5]
+_tx_byte_pool_search     0x800'4149   0x18c  Code  Gb  tx_byte_pool_search.o [5]
+_tx_event_flags_created_count
+                        0x2000'3348     0x4  Data  Gb  tx_event_flags_initialize.o [5]
+_tx_event_flags_created_ptr
+                        0x2000'3344     0x4  Data  Gb  tx_event_flags_initialize.o [5]
+_tx_event_flags_initialize
+                         0x800'2a5d    0x18  Code  Gb  tx_event_flags_initialize.o [5]
+_tx_initialize_high_level
+                         0x800'21d5    0x24  Code  Gb  tx_initialize_high_level.o [5]
+_tx_initialize_kernel_enter
+                         0x800'10dd    0x48  Code  Gb  tx_initialize_kernel_enter.o [5]
+_tx_initialize_low_level
+                         0x800'2161          Code  Gb  tx_initialize_low_level.o [5]
+_tx_initialize_unused_memory
+                        0x2000'32c8     0x4  Data  Gb  tx_initialize_high_level.o [5]
+_tx_misra_always_true    0x800'34af          Code  Gb  tx_misra.o [5]
+_tx_misra_byte_pool_to_uchar_pointer_convert
+                         0x800'34b9          Code  Gb  tx_misra.o [5]
+_tx_misra_const_char_to_char_pointer_convert
+                         0x800'34c9          Code  Gb  tx_misra.o [5]
+_tx_misra_ipsr_get       0x800'34cb          Code  Gb  tx_misra.o [5]
+_tx_misra_memset         0x800'3481          Code  Gb  tx_misra.o [5]
+_tx_misra_pointer_to_ulong_convert
+                         0x800'34a1          Code  Gb  tx_misra.o [5]
+_tx_misra_status_get     0x800'34bd          Code  Gb  tx_misra.o [5]
+_tx_misra_timer_indirect_to_void_pointer_convert
+                         0x800'34c7          Code  Gb  tx_misra.o [5]
+_tx_misra_timer_pointer_add
+                         0x800'34a9          Code  Gb  tx_misra.o [5]
+_tx_misra_timer_pointer_dif
+                         0x800'34a3          Code  Gb  tx_misra.o [5]
+_tx_misra_uchar_pointer_add
+                         0x800'3493          Code  Gb  tx_misra.o [5]
+_tx_misra_uchar_pointer_dif
+                         0x800'349d          Code  Gb  tx_misra.o [5]
+_tx_misra_uchar_pointer_sub
+                         0x800'3497          Code  Gb  tx_misra.o [5]
+_tx_misra_uchar_to_align_type_pointer_convert
+                         0x800'34bb          Code  Gb  tx_misra.o [5]
+_tx_misra_uchar_to_indirect_uchar_pointer_convert
+                         0x800'34b3          Code  Gb  tx_misra.o [5]
+_tx_misra_uchar_to_void_pointer_convert
+                         0x800'34c3          Code  Gb  tx_misra.o [5]
+_tx_misra_ulong_to_thread_pointer_convert
+                         0x800'34c5          Code  Gb  tx_misra.o [5]
+_tx_misra_void_to_byte_pool_pointer_convert
+                         0x800'34b7          Code  Gb  tx_misra.o [5]
+_tx_misra_void_to_semaphore_pointer_convert
+                         0x800'34c1          Code  Gb  tx_misra.o [5]
+_tx_misra_void_to_uchar_pointer_convert
+                         0x800'34b5          Code  Gb  tx_misra.o [5]
+_tx_mutex_created_count
+                        0x2000'3350     0x4  Data  Gb  tx_mutex_initialize.o [5]
+_tx_mutex_created_ptr   0x2000'334c     0x4  Data  Gb  tx_mutex_initialize.o [5]
+_tx_mutex_initialize     0x800'2aa5    0x18  Code  Gb  tx_mutex_initialize.o [5]
+_tx_queue_created_count
+                        0x2000'3358     0x4  Data  Gb  tx_queue_initialize.o [5]
+_tx_queue_created_ptr   0x2000'3354     0x4  Data  Gb  tx_queue_initialize.o [5]
+_tx_queue_initialize     0x800'2a45    0x18  Code  Gb  tx_queue_initialize.o [5]
+_tx_semaphore_cleanup    0x800'509d    0x94  Code  Gb  tx_semaphore_cleanup.o [5]
+_tx_semaphore_create     0x800'473d    0x58  Code  Gb  tx_semaphore_create.o [5]
+_tx_semaphore_created_count
+                        0x2000'3330     0x4  Data  Gb  tx_semaphore_initialize.o [5]
+_tx_semaphore_created_ptr
+                        0x2000'332c     0x4  Data  Gb  tx_semaphore_initialize.o [5]
+_tx_semaphore_delete     0x800'4ac1    0x98  Code  Gb  tx_semaphore_delete.o [5]
+_tx_semaphore_get        0x800'4b59    0x9c  Code  Gb  tx_semaphore_get.o [5]
+_tx_semaphore_initialize
+                         0x800'2a2d    0x18  Code  Gb  tx_semaphore_initialize.o [5]
+_tx_semaphore_put        0x800'4bf5    0x78  Code  Gb  tx_semaphore_put.o [5]
+_tx_thread_create        0x800'34d1   0x148  Code  Gb  tx_thread_create.o [5]
+_tx_thread_created_count
+                        0x2000'32dc     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_created_ptr  0x2000'32d8     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_current_ptr  0x2000'32d0     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_execute_ptr  0x2000'32d4     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_highest_priority
+                        0x2000'32e8     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_initialize    0x800'28bd    0x84  Code  Gb  tx_thread_initialize.o [5]
+_tx_thread_interrupt_disable
+                         0x800'3619          Code  Gb  tx_thread_interrupt_disable.o [5]
+_tx_thread_interrupt_restore
+                         0x800'3621          Code  Gb  tx_thread_interrupt_restore.o [5]
+_tx_thread_mutex_release
+                        0x2000'32f0     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_preempt_disable
+                        0x2000'32ec     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_preempted_maps
+                        0x2000'32e4     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_priority_list
+                        0x2000'307c    0x80  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_priority_maps
+                        0x2000'32e0     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_schedule      0x800'2351          Code  Gb  tx_thread_schedule.o [5]
+_tx_thread_shell_entry   0x800'51b5    0x74  Code  Gb  tx_thread_shell_entry.o [5]
+_tx_thread_sleep         0x800'3261    0x9c  Code  Gb  tx_thread_sleep.o [5]
+_tx_thread_stack_build   0x800'40e5          Code  Gb  tx_thread_stack_build.o [5]
+_tx_thread_system_preempt_check
+                         0x800'3629    0x28  Code  Gb  tx_thread_system_preempt_check.o [5]
+_tx_thread_system_resume
+                         0x800'3fdd   0x108  Code  Gb  tx_thread_system_resume.o [5]
+_tx_thread_system_return
+                         0x800'4129          Code  Gb  tx_thread_system_return.o [5]
+_tx_thread_system_stack_ptr
+                        0x2000'32cc     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_system_state
+                        0x2000'0028     0x4  Data  Gb  tx_thread_initialize.o [5]
+_tx_thread_system_suspend
+                         0x800'3d85   0x258  Code  Gb  tx_thread_system_suspend.o [5]
+_tx_thread_time_slice    0x800'3419    0x68  Code  Gb  tx_thread_time_slice.o [5]
+_tx_thread_timeout       0x800'52b5    0x44  Code  Gb  tx_thread_timeout.o [5]
+_tx_timer_created_count
+                        0x2000'3314     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_created_ptr   0x2000'3310     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_current_ptr   0x2000'3308     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_expiration_process
+                         0x800'33f5    0x24  Code  Gb  tx_timer_expiration_process.o [5]
+_tx_timer_expired       0x2000'330c     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_expired_time_slice
+                        0x2000'32fc     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_expired_timer_ptr
+                        0x2000'3318     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_initialize     0x800'2941    0xec  Code  Gb  tx_timer_initialize.o [5]
+_tx_timer_interrupt      0x800'27d5          Code  Gb  tx_timer_interrupt.o [5]
+_tx_timer_list          0x2000'30fc    0x80  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_list_end      0x2000'3304     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_list_start    0x2000'3300     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_priority      0x2000'3324     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_stack_size    0x2000'3320     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_stack_start   0x2000'331c     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_system_activate
+                         0x800'4691    0x7c  Code  Gb  tx_timer_system_activate.o [5]
+_tx_timer_system_clock  0x2000'32f8     0x4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_system_deactivate
+                         0x800'470d    0x2e  Code  Gb  tx_timer_system_deactivate.o [5]
+_tx_timer_thread        0x2000'2e78    0xb4  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_thread_entry   0x800'4ec5   0x144  Code  Gb  tx_timer_thread_entry.o [5]
+_tx_timer_thread_stack_area
+                        0x2000'28b4   0x400  Data  Gb  tx_timer_initialize.o [5]
+_tx_timer_time_slice    0x2000'3328     0x4  Data  Gb  tx_timer_initialize.o [5]
+_txe_byte_allocate       0x800'2b95    0xc0  Code  Gb  txe_byte_allocate.o [5]
+_txe_byte_pool_create    0x800'2abd    0xd8  Code  Gb  txe_byte_pool_create.o [5]
+_txe_semaphore_create    0x800'42d5    0xc4  Code  Gb  txe_semaphore_create.o [5]
+_txe_semaphore_delete    0x800'45a9    0x58  Code  Gb  txe_semaphore_delete.o [5]
+_txe_semaphore_get       0x800'4601    0x60  Code  Gb  txe_semaphore_get.o [5]
+_txe_semaphore_put       0x800'4661    0x20  Code  Gb  txe_semaphore_put.o [5]
+_txe_thread_create       0x800'2c55   0x168  Code  Gb  txe_thread_create.o [5]
+byte_pool_0             0x2000'00e0    0x34  Data  Gb  tx_sample.o [1]
+byte_pool_memory        0x2000'0114  0x23a0  Data  Gb  tx_sample.o [1]
+exit                     0x800'53f7     0x4  Code  Gb  exit.o [6]
+hcrc                    0x2000'32bc     0x8  Data  Gb  crc.o [1]
+hdma_usart1_rx          0x2000'2cf8    0x44  Data  Gb  usart.o [1]
+hdma_usart1_tx          0x2000'2cb4    0x44  Data  Gb  usart.o [1]
+hdma_usart2_rx          0x2000'2d80    0x44  Data  Gb  usart.o [1]
+hdma_usart2_tx          0x2000'2d3c    0x44  Data  Gb  usart.o [1]
+hrtc                    0x2000'3288    0x14  Data  Gb  rtc.o [1]
+htim4                   0x2000'317c    0x48  Data  Gb  stm32f1xx_hal_timebase_tim.o [1]
+huart1                  0x2000'3208    0x40  Data  Gb  usart.o [1]
+huart2                  0x2000'3248    0x40  Data  Gb  usart.o [1]
+main                     0x800'09ad    0x2c  Code  Gb  main.o [1]
+memset                   0x800'1731    0x14  Code  Gb  memset.o [7]
+rdByte_sem              0x2000'2fb4    0x20  Data  Lc  terminal_serial.o [1]
+read_buffer             0x2000'2f30    0x40  Data  Lc  terminal_serial.o [1]
+rx_DMA_buffer           0x2000'2f74    0x40  Data  Lc  terminal_serial.o [1]
+strcpy                   0x800'32fd          Code  Gb  strcpy.o [7]
+strlen                   0x800'33bd          Code  Gb  strlen.o [7]
+thread_0                0x2000'002c    0xb4  Data  Gb  tx_sample.o [1]
+thread_0_counter        0x2000'32c4     0x4  Data  Gb  tx_sample.o [1]
+thread_0_entry           0x800'2269    0xac  Code  Gb  tx_sample.o [1]
+tx_application_define    0x800'21f9    0x6e  Code  Gb  tx_sample.o [1]
+tx_len                  0x2000'2f2c     0x1  Data  Lc  terminal_serial.o [1]
+uwTick                  0x2000'001c     0x4  Data  Gb  stm32f1xx_hal.o [3]
+uwTickFreq              0x2000'0018     0x1  Data  Gb  stm32f1xx_hal.o [3]
+uwTickPrio              0x2000'0020     0x4  Data  Gb  stm32f1xx_hal.o [3]
+
+
+[1] = E:\DiskE\ThreadX_RTOS\IAROutFile\uart
+[2] = SEGGER_RTT.a
+[3] = STM32Lib.a
+[4] = STM32uart_DMA.a
+[5] = ThreadX.a
+[6] = dl7M_tlf.a
+[7] = rt7M_tl.a
+[8] = shb_l.a
+
+  20'884 bytes of readonly  code memory
+     929 bytes of readonly  data memory
+  14'172 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

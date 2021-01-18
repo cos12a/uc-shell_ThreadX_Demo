@@ -1,0 +1,331 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  18/Jan/2021  15:20:56
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\LibFile\STM32Lib.out
+#    Map file     =
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM\Stm32Lib\List\STM32Lib.map
+#    Command line =
+#        -f C:\Users\Dell\AppData\Local\Temp\EWF88C.tmp
+#        (E:\DiskE\ThreadX_RTOS\IAROutFile\crc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\dma.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\gpio.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\rtc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\startup_stm32f103xb.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_cortex.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_crc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_dma.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_exti.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_flash.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_flash_ex.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_gpio.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_gpio_ex.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_msp.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_pwr.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_rcc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_rcc_ex.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_rtc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_rtc_ex.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_tim.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_tim_ex.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_timebase_tim.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_hal_uart.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_it.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_ll_dma.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_ll_exti.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_ll_gpio.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_ll_rcc.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_ll_usart.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\stm32f1xx_ll_utils.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\system_stm32f1xx.o
+#        E:\DiskE\ThreadX_RTOS\IAROutFile\usart.o --no_out_extension -o
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\LibFile\STM32Lib.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM\Stm32Lib\List\STM32Lib.map
+#        --config
+#        E:\DiskE\ThreadX_RTOS\stm32_ucshell_tx_demo\EWARM/stm32f103xb_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Error[Li005]: no definition for "main" [referenced from cmain.o(rt7M_tl.a)]
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x801'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address   Size  Object
+  -------          ----         -------   ----  ------
+"A0":                                     0xec
+  .intvec          ro code   0x800'0000   0xec  startup_stm32f103xb.o [1]
+                           - 0x800'00ec   0xec
+
+"P1":                                    0x778
+  .text            ro code   0x800'00ec  0x20c  stm32f1xx_hal_uart.o [1]
+  .text            ro code   0x800'02f8  0x204  stm32f1xx_hal_dma.o [1]
+  .text            ro code   0x800'04fc    0x2  stm32f1xx_hal_uart.o [1]
+  .text            ro code   0x800'04fe    0x2  stm32f1xx_hal_uart.o [1]
+  .text            ro code   0x800'0500    0x2  stm32f1xx_hal_uart.o [1]
+  .text            ro code   0x800'0502   0x3a  zero_init3.o [3]
+  .text            ro code   0x800'053c  0x148  stm32f1xx_hal_tim.o [1]
+  .text            ro code   0x800'0684    0x2  stm32f1xx_hal_tim.o [1]
+  .text            ro code   0x800'0686    0x2  stm32f1xx_hal_tim.o [1]
+  .text            ro code   0x800'0688    0x2  stm32f1xx_hal_tim.o [1]
+  .text            ro code   0x800'068a    0x2  stm32f1xx_hal_tim_ex.o [1]
+  .text            ro code   0x800'068c    0x2  stm32f1xx_hal_tim.o [1]
+  .text            ro code   0x800'068e    0x2  stm32f1xx_hal_tim_ex.o [1]
+  .text            ro code   0x800'0690    0x2  stm32f1xx_hal_tim.o [1]
+  .text            ro code   0x800'0694   0x6a  stm32f1xx_it.o [1]
+  .text            ro code   0x800'0700   0x3e  stm32f1xx_hal_rtc_ex.o [1]
+  .text            ro code   0x800'073e    0x2  stm32f1xx_hal_rtc_ex.o [1]
+  .text            ro code   0x800'0740    0x2  stm32f1xx_hal_rtc_ex.o [1]
+  .text            ro code   0x800'0744   0x28  data_init.o [3]
+  .iar.init_table  const     0x800'076c   0x10  - Linker created -
+  .text            ro code   0x800'077c   0x1e  cmain.o [3]
+  .text            ro code   0x800'079a    0x4  low_level_init.o [2]
+  .text            ro code   0x800'079e    0x4  exit.o [2]
+  .text            ro code   0x800'07a4    0xa  cexit.o [3]
+  .text            ro code   0x800'07b0   0x14  exit.o [4]
+  .text            ro code   0x800'07c4   0x10  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07d4    0xc  cstartup_M.o [3]
+  .text            ro code   0x800'07e0    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07e4    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07e8    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07ec    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07f0    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07f4    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07f8    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'07fc    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0800    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0804    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0808    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'080c    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0810    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0814    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0818    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'081c    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0820    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0824    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0828    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'082c    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0830    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0834    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0838    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'083c    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0840    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0844    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0848    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'084c    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0850    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0854    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0858    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'085c    0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'0860    0x4  system_stm32f1xx.o [1]
+  .rodata          const     0x800'0864    0x0  zero_init3.o [3]
+                           - 0x800'0864  0x778
+
+"P2", part 1 of 2:                       0x1ec
+  .bss             zero     0x2000'0000  0x110  usart.o [1]
+  .bss             zero     0x2000'0110   0x48  stm32f1xx_hal_timebase_tim.o [1]
+  .bss             zero     0x2000'0158   0x40  usart.o [1]
+  .bss             zero     0x2000'0198   0x40  usart.o [1]
+  .bss             zero     0x2000'01d8   0x14  rtc.o [1]
+                          - 0x2000'01ec  0x1ec
+
+"P2", part 2 of 2:                       0x400
+  CSTACK                    0x2000'01f0  0x400  <Block>
+    CSTACK         uninit   0x2000'01f0  0x400  <Block tail>
+                          - 0x2000'05f0  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'0864   0x801'ffff  0x1'f79c
+  0x2000'01ec  0x2000'01ef       0x4
+  0x2000'05f0  0x2000'4fff    0x4a10
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1ec:
+          0x2000'0000  0x1ec
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                        ro code  ro data  rw data
+    ------                        -------  -------  -------
+command line/config:
+    -------------------------------------------------------
+    Total:
+
+E:\DiskE\ThreadX_RTOS\IAROutFile: [1]
+    rtc.o                                                20
+    startup_stm32f103xb.o             380
+    stm32f1xx_hal_dma.o               516
+    stm32f1xx_hal_rtc_ex.o             66
+    stm32f1xx_hal_tim.o               338
+    stm32f1xx_hal_tim_ex.o              4
+    stm32f1xx_hal_timebase_tim.o                         72
+    stm32f1xx_hal_uart.o              530
+    stm32f1xx_it.o                    106
+    system_stm32f1xx.o                  4
+    usart.o                                             400
+    -------------------------------------------------------
+    Total:                          1'944               492
+
+dl7M_tln.a: [2]
+    exit.o                              4
+    low_level_init.o                    4
+    -------------------------------------------------------
+    Total:                              8
+
+rt7M_tl.a: [3]
+    cexit.o                            10
+    cmain.o                            30
+    cstartup_M.o                       12
+    data_init.o                        40
+    zero_init3.o                       58
+    -------------------------------------------------------
+    Total:                            150
+
+shb_l.a: [4]
+    exit.o                             20
+    -------------------------------------------------------
+    Total:                             20
+
+    Gaps                               10
+    Linker created                              16    1'024
+-----------------------------------------------------------
+    Grand Total:                    2'132       16    1'516
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'076c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'077c          --   Gb  - Linker created -
+?main                    0x800'077d         Code  Gb  cmain.o [3]
+BusFault_Handler         0x800'069b    0x2  Code  Gb  stm32f1xx_it.o [1]
+CSTACK$$Base            0x2000'01f0          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'05f0          --   Gb  - Linker created -
+DMA1_Channel2_IRQHandler
+                         0x800'06ad    0x2  Code  Gb  stm32f1xx_it.o [1]
+DMA1_Channel3_IRQHandler
+                         0x800'06af    0x2  Code  Gb  stm32f1xx_it.o [1]
+DMA1_Channel4_IRQHandler
+                         0x800'06b1    0x6  Code  Gb  stm32f1xx_it.o [1]
+DMA1_Channel5_IRQHandler
+                         0x800'06b7    0x6  Code  Gb  stm32f1xx_it.o [1]
+DMA1_Channel6_IRQHandler
+                         0x800'06bd    0x6  Code  Gb  stm32f1xx_it.o [1]
+DMA1_Channel7_IRQHandler
+                         0x800'06c3    0x6  Code  Gb  stm32f1xx_it.o [1]
+DebugMon_Handler         0x800'06a1    0x2  Code  Gb  stm32f1xx_it.o [1]
+HAL_DMA_Abort_IT         0x800'02f9   0x94  Code  Gb  stm32f1xx_hal_dma.o [1]
+HAL_DMA_IRQHandler       0x800'0399  0x144  Code  Gb  stm32f1xx_hal_dma.o [1]
+HAL_RTCEx_RTCIRQHandler
+                         0x800'0701   0x3e  Code  Gb  stm32f1xx_hal_rtc_ex.o [1]
+HAL_TIMEx_BreakCallback
+                         0x800'068b    0x2  Code  Wk  stm32f1xx_hal_tim_ex.o [1]
+HAL_TIMEx_CommutCallback
+                         0x800'068f    0x2  Code  Wk  stm32f1xx_hal_tim_ex.o [1]
+HAL_TIM_IRQHandler       0x800'053d  0x142  Code  Gb  stm32f1xx_hal_tim.o [1]
+HAL_UART_IRQHandler      0x800'00f9  0x152  Code  Gb  stm32f1xx_hal_uart.o [1]
+HardFault_Handler        0x800'0697    0x2  Code  Gb  stm32f1xx_it.o [1]
+MemManage_Handler        0x800'0699    0x2  Code  Gb  stm32f1xx_it.o [1]
+NMI_Handler              0x800'0695    0x2  Code  Gb  stm32f1xx_it.o [1]
+PendSV_Handler           0x800'06a3    0x2  Code  Gb  stm32f1xx_it.o [1]
+RTC_IRQHandler           0x800'06a7    0x6  Code  Gb  stm32f1xx_it.o [1]
+Region$$Table$$Base      0x800'076c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'077c          --   Gb  - Linker created -
+SVC_Handler              0x800'069f    0x2  Code  Gb  stm32f1xx_it.o [1]
+SysTick_Handler          0x800'06a5    0x2  Code  Gb  stm32f1xx_it.o [1]
+SystemInit               0x800'0861    0x2  Code  Gb  system_stm32f1xx.o [1]
+TIM4_IRQHandler          0x800'06c9    0x6  Code  Gb  stm32f1xx_it.o [1]
+UART_DMAAbortOnError     0x800'0269    0xc  Code  Lc  stm32f1xx_hal_uart.o [1]
+UART_EndRxTransfer       0x800'024b   0x1c  Code  Lc  stm32f1xx_hal_uart.o [1]
+UART_Receive_IT          0x800'0275   0x84  Code  Lc  stm32f1xx_hal_uart.o [1]
+USART1_IRQHandler        0x800'06cf    0x6  Code  Gb  stm32f1xx_it.o [1]
+USART2_IRQHandler        0x800'06d5    0x6  Code  Gb  stm32f1xx_it.o [1]
+USART3_IRQHandler        0x800'06fd    0x2  Code  Gb  stm32f1xx_it.o [1]
+UsageFault_Handler       0x800'069d    0x2  Code  Gb  stm32f1xx_it.o [1]
+__cmain                  0x800'077d         Code  Gb  cmain.o [3]
+__exit                   0x800'07b1   0x14  Code  Gb  exit.o [4]
+__iar_data_init3         0x800'0745   0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'07d5         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'0503   0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'079b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f103xb.o [1]
+_call_main               0x800'0789         Code  Gb  cmain.o [3]
+_exit                    0x800'07a5         Code  Gb  cexit.o [3]
+_main                    0x800'0797         Code  Gb  cmain.o [3]
+exit                     0x800'079f    0x4  Code  Gb  exit.o [2]
+hdma_usart1_rx          0x2000'0044   0x44  Data  Gb  usart.o [1]
+hdma_usart1_tx          0x2000'0000   0x44  Data  Gb  usart.o [1]
+hdma_usart2_rx          0x2000'00cc   0x44  Data  Gb  usart.o [1]
+hdma_usart2_tx          0x2000'0088   0x44  Data  Gb  usart.o [1]
+hrtc                    0x2000'01d8   0x14  Data  Gb  rtc.o [1]
+htim4                   0x2000'0110   0x48  Data  Gb  stm32f1xx_hal_timebase_tim.o [1]
+huart1                  0x2000'0158   0x40  Data  Gb  usart.o [1]
+huart2                  0x2000'0198   0x40  Data  Gb  usart.o [1]
+
+
+[1] = E:\DiskE\ThreadX_RTOS\IAROutFile
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  2'132 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  1'516 bytes of readwrite data memory
+
+Errors: 1
+Warnings: none
